@@ -1,10 +1,27 @@
 # /bin/sh -x
 # http://uxmilk.jp/13610
 
-if [ `ls /etc/lsb-release` != 0 ];
+path_CentOS="/etc/redhat-release"
+path_Ubuntu="/etc/lsb-release"
+path_Debian="/etc/debian_version"
+path_Fedore="/etc/fedora-release"
+
+if [ -e $path_CentOS ];
 then
-cat /etc/lsb-release
-elif [ `ls /etc/redhat-release` != 0 ];
+  cat $path_CentOS;
+elif [ -e $path_Ubuntu ];
 then
-cat /etc/redhat-release
+  cat $path_Ubuntu;
+elif [ -e $path_Debian];
+then
+  cat $path_Debian;
+elif [ -e $path_Fedore ];
+then
+  cat $path_Fedore;
 fi
+
+cat /proc/version
+
+uname -r
+
+
