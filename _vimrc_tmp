@@ -1,0 +1,75 @@
+
+
+set paste
+
+set nobackup
+set noswapfile
+set autoread
+set number
+set cursorline
+set virtualedit=onemore
+set nosmartindent
+set visualbell
+set showmatch
+
+
+set fileencodings=utf-8,cp932,euc-jp
+
+" https://github.com/Shougo/dein.vim
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/Users/makotosuga/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin('/Users/makotosuga/.cache/dein')
+
+" Let dein manage dein
+" Required:
+call dein#add('/Users/makotosuga/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+" Add or remove your plugins here like this:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/unite.vim')
+call dein#add('yegappan/taglist.vim')
+call dein#add('t9md/vim-quickhl')
+call dein#add('itchyny/lightline.vim')
+call dein#add('skanehira/translate.vim')
+
+call dein#add('preservim/tagbar')
+call dein#add('preservim/nerdtree')
+
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" install処理が長いから消しているが、記述修正後には一度解除する。
+"
+" If you want to install not installed plugins on startup.
+" if dein#check_install()
+"   call dein#install()
+" endif
+"
+""" dein end
+
+
+nmap m <Plug>(quickhl-manual-this)
+xmap m <Plug>(quickhl-manual-this)
+nmap M <Plug>(quickhl-manual-reset)
+xmap M <Plug>(quickhl-manual-reset)
+
+nmap <F8> :TagbarToggle<CR>
+
+nnoremap <C-]> g<C-]>
+
+
+
+
+
